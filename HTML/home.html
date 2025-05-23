@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Chakri - Job Portal</title>
-        <link rel="stylesheet" href="CSS/style.css">
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"
-/>
+        <link rel="stylesheet" href="CSS/home.css">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     </head>
 
     <body>
         <div id="main">
-            <!-- Updated header with proper link structure -->
-            <!-- Updated header HTML to ensure horizontal menu layout -->
+            <!-- Updated header with Home button -->
             <div id="header">
-                <div id="logo">
-                    <div id="favicon">
-                        <img src="Resourses/Chakri_logo.png" alt="Chakri Logo">
-                    </div>
-                    <div id="name"><p>Chakri</p></div>
+            <div id="logo">
+                <div id="favicon">
+                    <img src="Resourses/Chakri_logo.png" alt="Chakri Logo">
                 </div>
-                <div class="writing">
-                    <div id="jobboard">
-                        <a href="job-board.html"><p>Job Board</p></a>
-                    </div>
-                    <div id="categories">
-                        <a href="categories.html"><p>Categories</p></a>
-                    </div>
-                    <div id="aboutus">
-                        <a href="about-us.html"><p>About Us</p></a>
-                    </div>
-                    <div id="globe">
-                        <i class="ri-global-line"></i>
-                        <p>English</p>
-                    </div>
-                    <div id="login">
-                        <a href="login.html">Login</a>
-                    </div>
-                </div>
+                <div id="name"><p>Chakri</p></div>
             </div>
+    <div class="writing">
+        <div id="home" class="selected">
+            <a href="home.html"><p>Home</p></a>
+        </div>
+        <div id="jobboard">
+            <a href="job-board.html"><p>Job Board</p></a>
+        </div>
+        <div id="categories">
+            <a href="categories.html"><p>Categories</p></a>
+        </div>
+        <div id="aboutus">
+            <a href="about-us.html"><p>About Us</p></a>
+        </div>
+        <div id="globe">
+            <i class="ri-global-line"></i>
+            <p>English</p>
+        </div>
+        <div id="login">
+            <a href="login.html">Login</a>
+        </div>
+    </div>
+</div>
             <div id="fakeheader"></div>
             <div id="page1">
                 <div id="block1">
@@ -219,5 +219,7 @@
                 </div>
             </div>
         </div>
+        
+        <script src="JS/home.js"></script>
     </body>
 </html>

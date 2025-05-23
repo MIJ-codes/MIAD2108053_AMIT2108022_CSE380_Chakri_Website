@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get elements
-    const loginText = document.querySelector('.login-text');
-    const loginForm = document.querySelector('.login-form');
-    const loginFormContent = document.querySelector('.login-form-content');
+    const chakriText = document.querySelector('.chakri-text');
+    const signupForm = document.querySelector('.signup-form');
+    const signupFormContent = document.querySelector('.signup-form-content');
     const bgAnimation = document.querySelector('.bg-animation');
     
     // Starting animation sequence - precisely timed for smooth flow
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 2. After the letters appear, move the CHAKRI text to the top
         setTimeout(() => {
-            loginText.style.animation = 'moveLogoUp 1.5s ease-out forwards';
+            chakriText.style.animation = 'moveLogoUp 1.5s ease-out forwards';
             
             // 3. After CHAKRI starts moving up, begin the purple background expansion
             setTimeout(() => {
@@ -19,41 +19,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // 4. As background expands to full screen, change CHAKRI text color to white
                 setTimeout(() => {
-                    loginText.style.color = 'white';
-                    loginText.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)';
+                    chakriText.style.color = 'white';
+                    chakriText.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)';
                     
-                    // 5. ONLY after text has moved up and purple background is expanding, make the login form visible
-                    // but keep it at opacity 0 so we can fade it in
-                    loginForm.style.visibility = 'visible';
+                    // 5. ONLY after text has moved up and purple background is expanding, make the signup form visible
+                    signupForm.style.visibility = 'visible';
                 }, 500);
                 
-                // 6. ONLY after purple background is fully expanded, fade in the login form
+                // 6. ONLY after purple background is fully expanded, fade in the signup form
                 setTimeout(() => {
-                    loginForm.style.opacity = '1';
-                    loginForm.style.transform = 'scale(1)';
+                    signupForm.style.opacity = '1';
+                    signupForm.style.transform = 'scale(1)';
                 }, 1500); // Wait for background to fully expand
             }, 800); // Start background expansion slightly after text starts moving
         }, 1000); // Wait for letters to appear before moving the text up
     }, 100);
     
-    // Handle login form submission
-    const loginFormElement = document.getElementById('login-form');
-    loginFormElement.addEventListener('submit', function(e) {
+    // Handle signup form submission
+    const signupFormElement = document.getElementById('signup-form');
+    signupFormElement.addEventListener('submit', function(e) {
         e.preventDefault();
-        // Add your login logic here
-        console.log('Login attempted');
-        // For demonstration purposes, redirect to home page after 1 second
+        
+        // Validate password match
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+        
+        // Add your signup logic here
+        console.log('Signup attempted');
+        
+        // For demonstration purposes, redirect to login page after 1 second
         setTimeout(() => {
-            alert('Login successful!');
-            // window.location.href = 'index.html';
+            alert('Signup successful! Please login with your new credentials.');
+            window.location.href = 'login.html';
         }, 1000);
     });
     
-    // Add ripple effect to login button on click
-    const loginButton = document.getElementById('login-button');
+    // Add ripple effect to signup button on click
+    const signupButton = document.getElementById('signup-button');
     const buttonAnimation = document.querySelector('.button-animation');
     
-    loginButton.addEventListener('click', createRippleEffect);
+    signupButton.addEventListener('click', createRippleEffect);
     
     // Function to create ripple effect
     function createRippleEffect(e) {

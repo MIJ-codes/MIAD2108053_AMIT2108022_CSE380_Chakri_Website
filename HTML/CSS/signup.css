@@ -12,6 +12,7 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: #f6f6fb;
+    overflow: hidden;
 }
 
 /* ==========================================================================
@@ -318,78 +319,6 @@ html, body {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Special styling for the login button when on the login page */
-#login.selected {
-    background-color: #512da8;
-    color: white;
-    border-color: white;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-    position: relative;
-    overflow: visible;
-}
-
-/* Add a subtle pulsing effect to the login button when selected */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
-}
-
-/* Apply the pulse animation */
-#login.selected {
-    animation: pulse 2s infinite ease-in-out;
-}
-
-/* Show shooting star effect continuously when selected */
-#login.selected::before {
-    opacity: 1;
-    animation: moveShootingStar 2.5s linear infinite;
-}
-
-/* Add a special indicator dot on top of the button */
-#login.selected::after {
-    content: '';
-    position: absolute;
-    top: 37px;
-    right: 0px;
-    width: auto;
-    height: auto;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-    animation: blink 1.5s infinite alternate;
-}
-
-@keyframes blink {
-    from {
-        opacity: 0.7;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-}
-
-/* Adjust hover behavior when already selected */
-#login.selected:hover {
-    transform: translateY(-2px);
-    background-color: #422388;
-}
-
-/* Make sure the "Login" text stays white */
-#login.selected a {
-    color: white;
-}
-
 /* For the fake header that creates space under the fixed header */
 #fakeheader {
     height: 80px; /* Same as header height */
@@ -397,7 +326,7 @@ html, body {
 }
 
 /* ==========================================================================
-   LOGIN PAGE SPECIFIC STYLES
+   SIGNUP PAGE SPECIFIC STYLES
    ========================================================================== */
 .container {
     height: 100vh;
@@ -435,8 +364,8 @@ html, body {
     }
 }
 
-/* Login Text Wave Animation */
-.login-text {
+/* Update transition properties for chakri-text to include opacity */
+.chakri-text {
     position: absolute;
     z-index: 5; /* Higher z-index to always be on top */
     font-size: 3rem;
@@ -447,7 +376,7 @@ html, body {
     transform: translate(-50%, -50%);
     text-align: center;
     letter-spacing: -1px;
-    transition: color 0.8s ease-out, text-shadow 0.8s ease-out; /* Smooth color transition */
+    transition: color 0.8s ease-out, text-shadow 0.8s ease-out, opacity 0.8s ease-out; /* Added opacity transition */
 }
 
 /* Modified moveLogoUp animation to include opacity transition */
@@ -465,19 +394,19 @@ html, body {
     }
 }
 
-.login-text span {
+.chakri-text span {
     display: inline-block;
     animation: waveDown 0.5s ease-out forwards;
     opacity: 0;
     transform: translateY(-50px);
 }
 
-.login-text span:nth-child(1) { animation-delay: 0s; }
-.login-text span:nth-child(2) { animation-delay: 0.1s; }
-.login-text span:nth-child(3) { animation-delay: 0.2s; }
-.login-text span:nth-child(4) { animation-delay: 0.3s; }
-.login-text span:nth-child(5) { animation-delay: 0.4s; }
-.login-text span:nth-child(6) { animation-delay: 0.5s; }
+.chakri-text span:nth-child(1) { animation-delay: 0s; }
+.chakri-text span:nth-child(2) { animation-delay: 0.1s; }
+.chakri-text span:nth-child(3) { animation-delay: 0.2s; }
+.chakri-text span:nth-child(4) { animation-delay: 0.3s; }
+.chakri-text span:nth-child(5) { animation-delay: 0.4s; }
+.chakri-text span:nth-child(6) { animation-delay: 0.5s; }
 
 @keyframes waveDown {
     0% {
@@ -490,7 +419,7 @@ html, body {
     }
 }
 
-/* Login Form with Pulsating Animation */
+/* Signup Form with Pulsating Animation */
 @keyframes formPulsate {
     0% {
         box-shadow: 0 0 30px rgba(255, 255, 255, 0.5),
@@ -512,7 +441,8 @@ html, body {
     }
 }
 
-.login-form {
+/* Signup Form */
+.signup-form {
     position: relative;
     z-index: 3;
     background: rgba(255, 255, 255, 0.85);
@@ -526,11 +456,12 @@ html, body {
     opacity: 0;
     transform: scale(0.8);
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    /* Initially hide the signup form completely */
     visibility: hidden;
 }
 
 /* Apply the pulsating animation when the form is visible */
-.login-form.visible {
+.signup-form.visible {
     opacity: 1;
     transform: scale(1);
     visibility: visible;
@@ -579,22 +510,6 @@ html, body {
     box-shadow: 0 0 8px rgba(81, 45, 168, 0.2);
 }
 
-.forgot-password {
-    text-align: right;
-    margin-bottom: 20px;
-}
-
-.forgot-password a {
-    color: #512da8;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.forgot-password a:hover {
-    text-decoration: underline;
-}
-
 .button-container {
     position: relative;
     width: 100%;
@@ -602,7 +517,7 @@ html, body {
     overflow: hidden;
 }
 
-.login-button {
+.signup-button {
     width: 100%;
     padding: 12px;
     background-color: #512da8;
@@ -619,7 +534,7 @@ html, body {
 }
 
 /* Horizontal ripple effect on hover */
-.login-button:before {
+.signup-button:before {
     content: "";
     position: absolute;
     top: 0;
@@ -632,16 +547,16 @@ html, body {
     z-index: -1;
 }
 
-.login-button:hover:before {
+.signup-button:hover:before {
     width: 100%;
 }
 
-.login-button:hover {
+.signup-button:hover {
     background-color: #422388;
     box-shadow: 0 5px 15px rgba(81, 45, 168, 0.3);
 }
 
-.login-button:active {
+.signup-button:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(81, 45, 168, 0.2);
 }
@@ -683,25 +598,25 @@ html, body {
     }
 }
 
-.signup-link {
+.login-link {
     text-align: center;
     color: #666;
     font-size: 0.9rem;
 }
 
-.signup-link a {
+.login-link a {
     color: #512da8;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
-.signup-link a:hover {
+.login-link a:hover {
     text-decoration: underline;
 }
 
-/* Login form content container */
-.login-form-content {
+/* Signup form content container */
+.signup-form-content {
     width: 100%;
     max-width: 400px;
     transition: opacity 0.5s ease;
@@ -733,22 +648,11 @@ html, body {
         font-size: 14px;
     }
     
-    #login.selected {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    }
-    
-    #login.selected::after {
-        width: 8px;
-        height: 8px;
-        top: -4px;
-        right: -4px;
-    }
-    
-    .login-text {
+    .chakri-text {
         font-size: 2.5rem;
     }
     
-    .login-form {
+    .signup-form {
         padding: 30px;
         width: 85%;
     }
