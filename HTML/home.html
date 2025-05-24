@@ -10,37 +10,57 @@
 
     <body>
         <div id="main">
-            <!-- Updated header with Home button -->
+            <!-- Header with fixed dropdown -->
             <div id="header">
-            <div id="logo">
-                <div id="favicon">
-                    <img src="Resourses/Chakri_logo.png" alt="Chakri Logo">
+                <div id="logo">
+                    <div id="favicon">
+                        <img src="Resourses/Chakri_Logo.png" alt="Chakri Logo">
+                    </div>
+                    <div id="name"><p>Chakri</p></div>
                 </div>
-                <div id="name"><p>Chakri</p></div>
+                <div class="writing">
+                    <div id="home" class="selected">
+                        <a href="home.html"><p>Home</p></a>
+                    </div>
+                    <div id="jobboard">
+                        <a href="job-board.html"><p>Job Board</p></a>
+                    </div>
+                    <div id="categories">
+                        <a href="categories.html"><p>Categories</p></a>
+                    </div>
+                    <div id="aboutus">
+                        <a href="about-us.html"><p>About Us</p></a>
+                    </div>
+                    <div id="explore" class="dropdown">
+                        <div class="dropdown-trigger">
+                            <i class="ri-compass-3-line"></i>
+                            <p>Explore</p>
+                            <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="job-seekers.html" class="dropdown-item">
+                                <i class="ri-user-search-line"></i>
+                                <span>For Job Seekers</span>
+                            </a>
+                            <a href="for-employers.html" class="dropdown-item">
+                                <i class="ri-building-line"></i>
+                                <span>For Employers</span>
+                            </a>
+                            <a href="company.html" class="dropdown-item">
+                                <i class="ri-briefcase-line"></i>
+                                <span>Company</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="login">
+                        <a href="login.html">Login</a>
+                    </div>
+                </div>
             </div>
-    <div class="writing">
-        <div id="home" class="selected">
-            <a href="home.html"><p>Home</p></a>
-        </div>
-        <div id="jobboard">
-            <a href="job-board.html"><p>Job Board</p></a>
-        </div>
-        <div id="categories">
-            <a href="categories.html"><p>Categories</p></a>
-        </div>
-        <div id="aboutus">
-            <a href="about-us.html"><p>About Us</p></a>
-        </div>
-        <div id="globe">
-            <i class="ri-global-line"></i>
-            <p>English</p>
-        </div>
-        <div id="login">
-            <a href="login.html">Login</a>
-        </div>
-    </div>
-</div>
+            
             <div id="fakeheader"></div>
+            
+            <!-- Main content section -->
             <div id="page1">
                 <div id="block1">
                     <div class="container">
@@ -59,9 +79,11 @@
                     </div>
                 </div>
                 <div id="block2">
-                    <img src="Resourses/first_page_photo.png" alt="">
+                    <img src="Resourses/first_page_photo.png" alt="Job Search Illustration">
                 </div>
             </div>
+            
+            <!-- Categories and Popular Services section -->
             <div id="page2">
                 <!-- Categories Heading -->
                 <div id="p2h">
@@ -70,42 +92,43 @@
                 </div>
                 <div id="cbox">
                     <div class="card">
-                        <img src="Resourses/Programming_&_Tech_Logo.png" alt="">
+                        <img src="Resourses/Programming_&_Tech_Logo.png" alt="Programming & Tech">
                         <p>Programming & <br> Tech</p>
                     </div>
                     <div class="card">
-                        <img src="Resourses/Graphics_&_Design_Logo.png" alt="">
+                        <img src="Resourses/Graphics_&_Design_Logo.png" alt="Graphics & Design">
                         <p>Graphics & Design</p>
                     </div>
                     <div class="card">
-                        <img src="Resourses/Digital_Marketing_Logo.png" alt="">
+                        <img src="Resourses/Digital_Marketing_Logo.png" alt="Digital Marketing">
                         <p>Digital Marketing</p>
                     </div>
                     <div class="card">
-                        <img src="Resourses/Writing_&_Translation_Logo.png" alt="">
+                        <img src="Resourses/Writing_&_Translation_Logo.png" alt="Writing & Translation">
                         <p>Writing & Translation</p>
                     </div>
                     <div class="card">
-                        <img src="Resourses/Video_&_Animation_Logo.png" alt="">
+                        <img src="Resourses/Video_&_Animation_Logo.png" alt="Video & Animation">
                         <p>Video & Animation</p>
                     </div>
                     <div class="card">
-                        <img src="Resourses/AI_Services_Logo.png" alt="">
+                        <img src="Resourses/AI_Services_Logo.png" alt="AI Services">
                         <p>AI Services</p>
                     </div>
                     <div class="card">
-                        <img src="Resourses/Music_&_Audio_Logo.png" alt="">
+                        <img src="Resourses/Music_&_Audio_Logo.png" alt="Music & Audio">
                         <p>Music & Audio</p>
                     </div>
                     <div class="card">
-                        <img src="Resourses/Business_Logo.png" alt="">
+                        <img src="Resourses/Business_Logo.png" alt="Business">
                         <p>Business</p>
                     </div>
                     <div class="card">
-                        <img src="Resourses/Consulting_Logo.png" alt="">
+                        <img src="Resourses/Consulting_Logo.png" alt="Consulting">
                         <p>Consulting</p>
                     </div>
                 </div>
+                
                 <div id="popularbox">
                     <h1>Popular Services</h1>
                 </div>
@@ -138,6 +161,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- Footer Section -->
             <div id="footer">
                 <div class="footer-container">
@@ -164,7 +188,7 @@
                             <li><a href="#">Browse Jobs</a></li>
                             <li><a href="#">Create Profile</a></li>
                             <li><a href="#">Job Alerts</a></li>
-                            <li><a href="#">Career Resources</a></li>
+                            <li><a href="career-resources.html">Career Resources</a></li>
                             <li><a href="#">Salary Guide</a></li>
                         </ul>
                     </div>
@@ -185,7 +209,7 @@
                     <div class="footer-col">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
                             <li><a href="#">Contact Us</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms of Service</a></li>
@@ -197,10 +221,10 @@
                     <div class="footer-col">
                         <h4>Subscribe to Our Newsletter</h4>
                         <p>Get weekly updates on new job opportunities</p>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="Enter your email">
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
                             <button type="submit">Subscribe</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
 
@@ -210,10 +234,10 @@
                     <div class="language-selector">
                         <i class="ri-global-line"></i>
                         <select>
-                            <option>English</option>
-                            <option>Hindi</option>
-                            <option>Bengali</option>
-                            <option>Tamil</option>
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                            <option value="bn">Bengali</option>
+                            <option value="ta">Tamil</option>
                         </select>
                     </div>
                 </div>

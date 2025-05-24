@@ -2,6 +2,7 @@
    BASIC RESET & GLOBAL STYLES
    ========================================================================== */
 * {
+    /* Reset all elements - removes margin/padding and sets box-sizing */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +10,7 @@
 }
 
 html, body {
+    /* Set html and body to full viewport height and width with light purple background */
     height: 100%;
     width: 100%;
     background-color: #f6f6fb;
@@ -18,6 +20,7 @@ html, body {
    HEADER STYLES
    ========================================================================== */
 #header {
+    /* Main header bar with purple background, fixed positioning, and shadow */
     background-color: #512da8;
     width: 100%;
     height: 80px;
@@ -34,6 +37,7 @@ html, body {
 
 /* Logo and Brand */
 #logo {
+    /* Container for logo image and text, set to full header height */
     height: 100%;
     display: flex;
     align-items: center;
@@ -41,6 +45,7 @@ html, body {
 }
 
 #favicon {
+    /* Container for the logo image */
     height: 60px;
     width: auto;
     display: flex;
@@ -49,12 +54,14 @@ html, body {
 }
 
 #favicon img {
+    /* Style for the logo image itself */
     max-height: 100%;
     width: auto;
     object-fit: contain;
 }
 
 #name {
+    /* Style for the brand name text */
     font-size: 28px;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -63,6 +70,7 @@ html, body {
 
 /* Menu navigation */
 .writing {
+    /* Container for navigation menu items */
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -72,6 +80,7 @@ html, body {
 }
 
 .writing div {
+    /* Common style for all navigation items */
     position: relative;
     overflow: visible;
     height: 40px;
@@ -80,6 +89,7 @@ html, body {
 }
 
 .writing p {
+    /* Style for text inside navigation items */
     font-weight: 500;
     font-size: 16px;
     color: white;
@@ -92,6 +102,7 @@ html, body {
 }
 
 .writing div a {
+    /* Style for links inside navigation items */
     position: relative;
     z-index: 5;
     text-decoration: none;
@@ -101,6 +112,7 @@ html, body {
 
 /* Home button styles and selected state */
 #home {
+    /* Specific style for the home menu item */
     position: relative;
     overflow: visible;
     height: 40px;
@@ -110,13 +122,14 @@ html, body {
 
 /* Selected menu item style */
 .writing div.selected p {
+    /* Text style for the currently selected menu item */
     font-weight: 600; /* Make it slightly bolder */
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.4); /* Add slight glow */
 }
 
 /* Apply the full hover animation effect to selected menu item */
-/* This creates the subtle border highlight that normally appears only on hover */
 .writing div.selected::after {
+    /* Border highlight for selected menu item */
     content: '';
     position: absolute;
     top: 0;
@@ -131,6 +144,7 @@ html, body {
 
 /* Make the shooting star effect continuous for selected item without hover */
 .writing div.selected::before {
+    /* Shooting star animation element for selected menu item */
     content: '';
     position: absolute;
     width: 15px;
@@ -146,6 +160,7 @@ html, body {
 }
 
 #globe {
+    /* Style for the language/globe menu item */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,6 +169,7 @@ html, body {
 }
 
 #globe i {
+    /* Style for the globe icon */
     font-size: 18px;
     color: white;
     margin-right: 2px;
@@ -161,6 +177,7 @@ html, body {
 
 /* Login Button */
 #login {
+    /* Style for the login button - white with purple text */
     padding: 8px 24px;
     background-color: white;
     color: #512da8;
@@ -179,6 +196,7 @@ html, body {
 }
 
 #login::before {
+    /* Shooting star element for login button */
     content: '';
     position: absolute;
     width: 15px;
@@ -194,12 +212,14 @@ html, body {
 
 /* Show the shooting star effect on hover */
 #login:hover::before {
+    /* Activate shooting star animation on hover */
     opacity: 1;
     animation: moveShootingStar 2.5s linear infinite;
 }
 
 /* Animation for the shooting star line moving around */
 @keyframes moveShootingStar {
+    /* Keyframes for the shooting star animation that traces the border */
     0% {
         top: 0;
         left: 0;
@@ -270,6 +290,7 @@ html, body {
 }
 
 #login:hover {
+    /* Hover state for login button - changes to purple with white text */
     background-color: #512da8;
     color: white;
     transform: translateY(-2px);
@@ -278,6 +299,7 @@ html, body {
 
 /* Shooting star effect */
 .writing div:not(#login)::before {
+    /* Shooting star element for all menu items except login */
     content: '';
     position: absolute;
     width: 15px;
@@ -293,12 +315,14 @@ html, body {
 
 /* Show the shooting star on hover */
 .writing div:not(#login):hover::before {
+    /* Activate shooting star for menu items on hover */
     opacity: 1;
     animation: moveShootingStar 2.5s linear infinite;
 }
 
 /* Create a subtle border around the menu item */
 .writing div:not(#login)::after {
+    /* Border highlight element for menu items */
     content: '';
     position: absolute;
     top: 0;
@@ -314,12 +338,14 @@ html, body {
 
 /* Show the border on hover */
 .writing div:not(#login):hover::after {
+    /* Show border highlight on menu items hover */
     opacity: 1;
     border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Special styling for the login button when on the login page */
 #login.selected {
+    /* Style for login button when on login page - inverted colors and effects */
     background-color: #512da8;
     color: white;
     border-color: white;
@@ -332,6 +358,7 @@ html, body {
 
 /* Add a subtle pulsing effect to the login button when selected */
 @keyframes pulse {
+    /* Keyframes for pulsing glow animation */
     0% {
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
@@ -345,53 +372,73 @@ html, body {
 
 /* Apply the pulse animation */
 #login.selected {
+    /* Apply pulsing animation to selected login button */
     animation: pulse 2s infinite ease-in-out;
 }
 
 /* Show shooting star effect continuously when selected */
 #login.selected::before {
+    /* Continuously show shooting star on selected login button */
     opacity: 1;
     animation: moveShootingStar 2.5s linear infinite;
 }
 
-/* Add a special indicator dot on top of the button */
+/* Line indicator for login button */
 #login.selected::after {
     content: '';
     position: absolute;
-    top: 37px;
-    right: 0px;
-    width: auto;
-    height: auto;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-    animation: blink 1.5s infinite alternate;
+    top: 100%; /* Position at the bottom of the element */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px; /* Space between button and line */
+    width: 20px;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgb(255, 255, 255);
+    animation: lineGrowShrink 1.5s infinite alternate;
+    z-index: 5;
 }
 
-@keyframes blink {
+/* Animation for growing and shrinking line */
+@keyframes lineGrowShrink {
     from {
-        opacity: 0.7;
-        transform: scale(0.8);
+        width: 5px;
+        opacity: 1;
     }
     to {
+        width: 150px;
         opacity: 1;
-        transform: scale(1.2);
     }
 }
 
 /* Adjust hover behavior when already selected */
 #login.selected:hover {
+    /* Hover state for already-selected login button */
     transform: translateY(-2px);
     background-color: #422388;
 }
 
 /* Make sure the "Login" text stays white */
 #login.selected a {
+    /* Ensure text in selected login button stays white */
     color: white;
+}
+
+/* Ripple effect for when About Us is clicked */
+.header-ripple {
+    /* Style for ripple effect when header items are clicked */
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: headerRipple 0.6s linear;
+    pointer-events: none;
 }
 
 /* For the fake header that creates space under the fixed header */
 #fakeheader {
+    /* Empty div that creates space equal to the header height */
     height: 80px; /* Same as header height */
     width: 100%;
 }
@@ -400,6 +447,7 @@ html, body {
    LOGIN PAGE SPECIFIC STYLES
    ========================================================================== */
 .container {
+    /* Main container for login page content */
     height: 100vh;
     width: 100%;
     display: flex;
@@ -411,6 +459,7 @@ html, body {
 
 /* Background animation */
 .bg-animation {
+    /* Background element that expands to fill the screen */
     position: absolute;
     top: 0;
     left: 0;
@@ -424,6 +473,7 @@ html, body {
 }
 
 @keyframes expandBg {
+    /* Keyframes for background expansion animation */
     0% {
         transform: scale(0);
         background-color: #f6f6fb;
@@ -437,6 +487,7 @@ html, body {
 
 /* Login Text Wave Animation */
 .login-text {
+    /* Style for CHAKRI text in the login animation */
     position: absolute;
     z-index: 5; /* Higher z-index to always be on top */
     font-size: 3rem;
@@ -452,6 +503,7 @@ html, body {
 
 /* Modified moveLogoUp animation to include opacity transition */
 @keyframes moveLogoUp {
+    /* Keyframes for CHAKRI text moving upward animation */
     0% {
         transform: translate(-50%, -50%);
         opacity: 1;
@@ -466,6 +518,7 @@ html, body {
 }
 
 .login-text span {
+    /* Style for individual letters in CHAKRI */
     display: inline-block;
     animation: waveDown 0.5s ease-out forwards;
     opacity: 0;
@@ -480,6 +533,7 @@ html, body {
 .login-text span:nth-child(6) { animation-delay: 0.5s; }
 
 @keyframes waveDown {
+    /* Keyframes for letters dropping in animation */
     0% {
         transform: translateY(-50px);
         opacity: 0;
@@ -492,6 +546,7 @@ html, body {
 
 /* Login Form with Pulsating Animation */
 @keyframes formPulsate {
+    /* Keyframes for login form pulsating glow */
     0% {
         box-shadow: 0 0 30px rgba(255, 255, 255, 0.5),
                     0 0 60px rgba(255, 255, 255, 0.3),
@@ -513,6 +568,7 @@ html, body {
 }
 
 .login-form {
+    /* Style for the login form container */
     position: relative;
     z-index: 3;
     background: rgba(255, 255, 255, 0.85);
@@ -531,6 +587,7 @@ html, body {
 
 /* Apply the pulsating animation when the form is visible */
 .login-form.visible {
+    /* Style for login form when it becomes visible */
     opacity: 1;
     transform: scale(1);
     visibility: visible;
@@ -538,26 +595,31 @@ html, body {
 }
 
 .form-header {
+    /* Style for the login form header */
     text-align: center;
     margin-bottom: 30px;
 }
 
 .form-header h2 {
+    /* Style for the main heading in login form */
     font-size: 1.8rem;
     color: #512da8;
     margin-bottom: 10px;
 }
 
 .form-header p {
+    /* Style for subheading in login form */
     color: #666;
     font-size: 1rem;
 }
 
 .form-group {
+    /* Style for form input groups */
     margin-bottom: 20px;
 }
 
 .form-group label {
+    /* Style for form input labels */
     display: block;
     margin-bottom: 8px;
     color: #333;
@@ -565,6 +627,7 @@ html, body {
 }
 
 .form-group input {
+    /* Style for form input fields */
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
@@ -574,17 +637,20 @@ html, body {
 }
 
 .form-group input:focus {
+    /* Style for form inputs when focused */
     outline: none;
     border-color: #512da8;
     box-shadow: 0 0 8px rgba(81, 45, 168, 0.2);
 }
 
 .forgot-password {
+    /* Style for forgot password link container */
     text-align: right;
     margin-bottom: 20px;
 }
 
 .forgot-password a {
+    /* Style for forgot password link */
     color: #512da8;
     text-decoration: none;
     font-size: 0.9rem;
@@ -592,10 +658,12 @@ html, body {
 }
 
 .forgot-password a:hover {
+    /* Hover style for forgot password link */
     text-decoration: underline;
 }
 
 .button-container {
+    /* Container for login button with relative positioning for effects */
     position: relative;
     width: 100%;
     margin-bottom: 20px;
@@ -603,6 +671,7 @@ html, body {
 }
 
 .login-button {
+    /* Style for the login submit button */
     width: 100%;
     padding: 12px;
     background-color: #512da8;
@@ -620,6 +689,7 @@ html, body {
 
 /* Horizontal ripple effect on hover */
 .login-button:before {
+    /* Horizontal ripple effect for login button */
     content: "";
     position: absolute;
     top: 0;
@@ -633,21 +703,25 @@ html, body {
 }
 
 .login-button:hover:before {
+    /* Expand horizontal ripple on hover */
     width: 100%;
 }
 
 .login-button:hover {
+    /* Hover style for login button */
     background-color: #422388;
     box-shadow: 0 5px 15px rgba(81, 45, 168, 0.3);
 }
 
 .login-button:active {
+    /* Active/pressed style for login button */
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(81, 45, 168, 0.2);
 }
 
 /* Button animation for click */
 .button-animation {
+    /* Background element for button click animation */
     position: absolute;
     top: 0;
     left: 0;
@@ -662,12 +736,14 @@ html, body {
 }
 
 .button-animation.animate {
+    /* Animation class for button click effect */
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
 
 /* Ripple effect for click */
 .ripple {
+    /* Circular ripple effect for button clicks */
     position: absolute;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
@@ -677,6 +753,7 @@ html, body {
 }
 
 @keyframes ripple {
+    /* Keyframes for circular ripple expansion */
     to { 
         transform: scale(4); 
         opacity: 0; 
@@ -684,12 +761,14 @@ html, body {
 }
 
 .signup-link {
+    /* Style for signup link container */
     text-align: center;
     color: #666;
     font-size: 0.9rem;
 }
 
 .signup-link a {
+    /* Style for signup link */
     color: #512da8;
     text-decoration: none;
     font-weight: 600;
@@ -697,11 +776,13 @@ html, body {
 }
 
 .signup-link a:hover {
+    /* Hover style for signup link */
     text-decoration: underline;
 }
 
 /* Login form content container */
 .login-form-content {
+    /* Container for all login form content */
     width: 100%;
     max-width: 400px;
     transition: opacity 0.5s ease;
@@ -711,33 +792,42 @@ html, body {
    RESPONSIVE STYLES
    ========================================================================== */
 @media (max-width: 768px) {
+    /* Responsive styles for smaller screens */
+    
     /* Header adjustments */
     #header {
+        /* Reduced padding for header on small screens */
         padding: 0 15px;
     }
     
     .writing {
+        /* Reduce gap between menu items on small screens */
         gap: 15px;
     }
     
     #name {
+        /* Smaller brand name on small screens */
         font-size: 22px;
     }
     
     .writing p {
+        /* Smaller menu text on small screens */
         font-size: 14px;
     }
     
     #login {
+        /* Smaller login button on small screens */
         padding: 6px 16px;
         font-size: 14px;
     }
     
     #login.selected {
+        /* Adjusted shadow for selected login on small screens */
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
     
     #login.selected::after {
+        /* Adjusted indicator dot size and position for small screens */
         width: 8px;
         height: 8px;
         top: -4px;
@@ -745,10 +835,12 @@ html, body {
     }
     
     .login-text {
+        /* Smaller CHAKRI text on small screens */
         font-size: 2.5rem;
     }
     
     .login-form {
+        /* Smaller login form with less padding on small screens */
         padding: 30px;
         width: 85%;
     }

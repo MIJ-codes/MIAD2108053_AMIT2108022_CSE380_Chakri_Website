@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chakri - Career Resources</title>
+    <link rel="stylesheet" href="CSS/career-resources.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Header Section - Updated to match job-seekers.html -->
+    <div id="header">
+        <div id="logo">
+            <div id="favicon">
+                <img src="Resourses/Chakri_Logo.png" alt="Chakri Logo">
+            </div>
+            <div id="name"><p>Chakri</p></div>
+        </div>
+        <div class="writing">
+            <div id="home">
+                <a href="home.html"><p>Home</p></a>
+            </div>
+            <div id="jobboard">
+                <a href="job-board.html"><p>Job Board</p></a>
+            </div>
+            <div id="categories">
+                <a href="categories.html"><p>Categories</p></a>
+            </div>
+            <div id="aboutus">
+                <a href="about-us.html"><p>About Us</p></a>
+            </div>
+            <!-- Redesigned Explore Dropdown -->
+            <div id="explore" class="selected">
+                <a href="javascript:void(0);">
+                    <i class="ri-compass-3-line"></i>
+                    <p>Explore</p>
+                    <i class="ri-arrow-down-s-line"></i>
+                </a>
+                <div class="explore-dropdown">
+                    <a href="job-seekers.html" class="dropdown-item">
+                        <i class="ri-user-search-line"></i>
+                        <span>For Job Seekers</span>
+                    </a>
+                    <a href="for-employers.html" class="dropdown-item">
+                        <i class="ri-building-line"></i>
+                        <span>For Employers</span>
+                    </a>
+                    <a href="company.html" class="dropdown-item">
+                        <i class="ri-briefcase-line"></i>
+                        <span>Company</span>
+                    </a>
+                </div>
+            </div>
+            <div id="login">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fake header for spacing -->
+    <div id="fakeheader"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text anim-fade-up">
+                <h1>Career <span>Resources</span></h1>
+                <p>Expert guidance and tools to advance your professional journey</p>
+            </div>
+            <div class="search-container anim-fade-up anim-delay-200">
+                <input type="text" placeholder="Search for resources..." id="resource-search">
+                <button type="submit"><i class="ri-search-line"></i></button>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrows">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-animation">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+        </div>
+    </section>
+    
+    <!-- Resources Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title anim-fade-up">Explore Resources</h2>
+            <div class="categories-grid">
+                <div class="category-card anim-fade-up anim-delay-100" data-category="resume">
+                    <div class="category-icon">
+                        <i class="ri-file-list-3-line"></i>
+                    </div>
+                    <h3>Resume Building</h3>
+                    <p>Create standout resumes that get noticed by employers</p>
+                    <div class="card-overlay"></div>
+                </div>
+                
+                <div class="category-card anim-fade-up anim-delay-200" data-category="interview">
+                    <div class="category-icon">
+                        <i class="ri-chat-3-line"></i>
+                    </div>
+                    <h3>Interview Prep</h3>
+                    <p>Strategies to excel in different interview formats</p>
+                    <div class="card-overlay"></div>
+                </div>
+                
+                <div class="category-card anim-fade-up anim-delay-300" data-category="networking">
+                    <div class="category-icon">
+                        <i class="ri-team-line"></i>
+                    </div>
+                    <h3>Networking</h3>
+                    <p>Build professional connections that advance your career</p>
+                    <div class="card-overlay"></div>
+                </div>
+                
+                <div class="category-card anim-fade-up anim-delay-400" data-category="skills">
+                    <div class="category-icon">
+                        <i class="ri-bar-chart-grouped-line"></i>
+                    </div>
+                    <h3>Skill Development</h3>
+                    <p>Resources to enhance your professional capabilities</p>
+                    <div class="card-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Resources Section -->
+    <section class="featured-resources">
+        <div class="container">
+            <h2 class="section-title anim-fade-up">Featured Resources</h2>
+            <div class="resources-slider">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <!-- Resource Cards -->
+                        <div class="resource-card">
+                            <div class="resource-img">
+                                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop" alt="Resume Writing">
+                                <div class="resource-tag">Guide</div>
+                            </div>
+                            <div class="resource-content">
+                                <h3>Ultimate Resume Guide</h3>
+                                <p>Learn how to craft a resume that stands out to recruiters and passes through ATS systems.</p>
+                                <a href="#" class="resource-link">Read More <i class="ri-arrow-right-line"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <div class="resource-img">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop" alt="Interview Techniques">
+                                <div class="resource-tag">Article</div>
+                            </div>
+                            <div class="resource-content">
+                                <h3>STAR Interview Method</h3>
+                                <p>Master the STAR method for answering behavioral interview questions with confidence.</p>
+                                <a href="#" class="resource-link">Read More <i class="ri-arrow-right-line"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <div class="resource-img">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Networking Tips">
+                                <div class="resource-tag">Tutorial</div>
+                            </div>
+                            <div class="resource-content">
+                                <h3>Strategic Networking</h3>
+                                <p>Discover how to build meaningful professional relationships that advance your career.</p>
+                                <a href="#" class="resource-link">Read More <i class="ri-arrow-right-line"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <div class="resource-img">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Skill Building">
+                                <div class="resource-tag">Course</div>
+                            </div>
+                            <div class="resource-content">
+                                <h3>High-Demand Skills 2025</h3>
+                                <p>Learn which professional skills are most valuable in today's job market.</p>
+                                <a href="#" class="resource-link">Read More <i class="ri-arrow-right-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button class="slider-prev"><i class="ri-arrow-left-s-line"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-next"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Latest Articles Section -->
+    <section class="latest-articles">
+        <div class="container">
+            <h2 class="section-title anim-fade-up">Latest Articles</h2>
+            <div class="articles-grid">
+                <div class="article-card anim-fade-up">
+                    <div class="article-img">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="Career Change">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">May 15, 2025</span>
+                            <span class="article-category">Career Change</span>
+                        </div>
+                        <h3>Transitioning to a New Career Path Successfully</h3>
+                        <p>Practical steps to make a smooth career transition without starting over completely.</p>
+                        <a href="#" class="read-more">Continue Reading</a>
+                    </div>
+                </div>
+                
+                <div class="article-card anim-fade-up anim-delay-100">
+                    <div class="article-img">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop" alt="Remote Work">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">May 10, 2025</span>
+                            <span class="article-category">Remote Work</span>
+                        </div>
+                        <h3>Thriving in a Remote Work Environment</h3>
+                        <p>Strategies to stay productive, visible, and connected while working remotely.</p>
+                        <a href="#" class="read-more">Continue Reading</a>
+                    </div>
+                </div>
+                
+                <div class="article-card anim-fade-up anim-delay-200">
+                    <div class="article-img">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?q=80&w=2070&auto=format&fit=crop" alt="Salary Negotiation">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">May 5, 2025</span>
+                            <span class="article-category">Negotiation</span>
+                        </div>
+                        <h3>The Art of Salary Negotiation</h3>
+                        <p>Expert tips on how to confidently negotiate for the compensation you deserve.</p>
+                        <a href="#" class="read-more">Continue Reading</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-container anim-fade-up">
+                <a href="#" class="btn btn-primary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Career Tools Section -->
+    <section class="career-tools">
+        <div class="container">
+            <h2 class="section-title anim-fade-up">Career Tools</h2>
+            <div class="tools-wrapper">
+                <div class="tools-grid">
+                    <div class="tool-card anim-fade-up">
+                        <div class="tool-icon">
+                            <i class="ri-file-paper-2-line"></i>
+                        </div>
+                        <h3>Resume Builder</h3>
+                        <p>Create a professional resume with our easy-to-use template builder</p>
+                        <a href="#" class="tool-button">Try Now</a>
+                    </div>
+                    
+                    <div class="tool-card anim-fade-up anim-delay-100">
+                        <div class="tool-icon">
+                            <i class="ri-money-dollar-circle-line"></i>
+                        </div>
+                        <h3>Salary Calculator</h3>
+                        <p>Compare salaries across industries, roles, and locations</p>
+                        <a href="#" class="tool-button">Calculate</a>
+                    </div>
+                    
+                    <div class="tool-card anim-fade-up anim-delay-200">
+                        <div class="tool-icon">
+                            <i class="ri-user-voice-line"></i>
+                        </div>
+                        <h3>Interview Simulator</h3>
+                        <p>Practice with AI-powered mock interviews for common questions</p>
+                        <a href="#" class="tool-button">Practice</a>
+                    </div>
+                    
+                    <div class="tool-card anim-fade-up anim-delay-300">
+                        <div class="tool-icon">
+                            <i class="ri-road-map-line"></i>
+                        </div>
+                        <h3>Career Path Explorer</h3>
+                        <p>Discover potential career paths based on your skills and interests</p>
+                        <a href="#" class="tool-button">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Webinar and Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title anim-fade-up">Upcoming Webinars & Events</h2>
+                <p class="section-subtitle anim-fade-up">Join our free online sessions led by industry experts</p>
+            </div>
+            
+            <div class="events-timeline">
+                <!-- Event 1 -->
+                <div class="event-item anim-fade-up">
+                    <div class="event-date">
+                        <span class="month">May</span>
+                        <span class="day">27</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-tag">Webinar</div>
+                        <h3>Mastering Technical Interviews</h3>
+                        <p class="event-description">Learn strategies to excel in coding challenges and technical discussions.</p>
+                        <div class="event-details">
+                            <span><i class="ri-time-line"></i> 3:00 PM - 4:30 PM EST</span>
+                            <span><i class="ri-user-line"></i> Sarah Johnson, Senior Tech Recruiter</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-register">Register Now</a>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-item anim-fade-up anim-delay-100">
+                    <div class="event-date">
+                        <span class="month">Jun</span>
+                        <span class="day">05</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-tag">Workshop</div>
+                        <h3>Personal Branding for Job Seekers</h3>
+                        <p class="event-description">Develop a compelling personal brand that makes you stand out to employers.</p>
+                        <div class="event-details">
+                            <span><i class="ri-time-line"></i> 1:00 PM - 3:00 PM EST</span>
+                            <span><i class="ri-user-line"></i> Michael Chang, Brand Strategist</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-register">Register Now</a>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-item anim-fade-up anim-delay-200">
+                    <div class="event-date">
+                        <span class="month">Jun</span>
+                        <span class="day">12</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-tag">Panel</div>
+                        <h3>Industry Insights: Tech Trends 2025</h3>
+                        <p class="event-description">Hear from industry leaders about emerging technologies and career opportunities.</p>
+                        <div class="event-details">
+                            <span><i class="ri-time-line"></i> 11:00 AM - 12:30 PM EST</span>
+                            <span><i class="ri-user-line"></i> Panel of 4 Tech Leaders</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-register">Register Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-container anim-fade-up">
+                <a href="#" class="btn btn-primary">View All Events</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-container anim-fade-up">
+                <div class="newsletter-content">
+                    <h2>Stay Updated with Career Insights</h2>
+                    <p>Join our newsletter to receive the latest career tips, industry trends, and job opportunities.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <div class="form-terms">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to receive career-related emails and can unsubscribe at any time.</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="newsletter-image">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Newsletter">
+                    <div class="floating-icon icon1"><i class="ri-mail-line"></i></div>
+                    <div class="floating-icon icon2"><i class="ri-file-list-line"></i></div>
+                    <div class="floating-icon icon3"><i class="ri-star-line"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title anim-fade-up">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item anim-fade-up">
+                    <div class="faq-question">
+                        <h3>How do I create an effective resume?</h3>
+                        <div class="faq-icon"><i class="ri-add-line"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>An effective resume clearly presents your qualifications, experience, and skills in a concise, well-organized format. Focus on achievements rather than responsibilities, use action verbs, and tailor your resume for each job application. Our Resume Builder tool can help you create a professional resume that stands out.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item anim-fade-up anim-delay-100">
+                    <div class="faq-question">
+                        <h3>How should I prepare for a job interview?</h3>
+                        <div class="faq-icon"><i class="ri-add-line"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Research the company thoroughly, prepare answers to common interview questions, practice with our Interview Simulator, dress professionally, bring copies of your resume, prepare thoughtful questions to ask the interviewer, and follow up with a thank-you note after the interview.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item anim-fade-up anim-delay-200">
+                    <div class="faq-question">
+                        <h3>How can I network effectively?</h3>
+                        <div class="faq-icon"><i class="ri-add-line"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Effective networking involves building genuine relationships. Attend industry events, join professional associations, connect with alumni, engage on LinkedIn, follow up with new connections, offer help to others, and maintain your network even when you're not job searching.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item anim-fade-up anim-delay-300">
+                    <div class="faq-question">
+                        <h3>How do I negotiate a job offer?</h3>
+                        <div class="faq-icon"><i class="ri-add-line"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Research salary ranges for your position and location, consider the entire compensation package (not just salary), practice your negotiation pitch, remain professional and collaborative, be prepared to justify your request based on your value, and get the final offer in writing before accepting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer id="footer">
+        <div class="footer-container">
+            <!-- Footer Logo and About -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="Resourses/Chakri_logo.png" alt="Chakri Logo">
+                    <h3>Chakri</h3>
+                </div>
+                <p class="footer-about">Connecting talented professionals <br> with their dream opportunities <br> since 2023.</p>
+                <p class="footer-about">Find your perfect job match with Chakri.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-twitter-x-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-fill"></i></a>
+                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+
+            <!-- For Job Seekers -->
+            <div class="footer-col">
+                <h4>For Job Seekers</h4>
+                <ul>
+                    <li><a href="#">Browse Jobs</a></li>
+                    <li><a href="#">Create Profile</a></li>
+                    <li><a href="#">Job Alerts</a></li>
+                    <li><a href="career-resources.html" class="active-footer-link">Career Resources</a></li>
+                    <li><a href="#">Salary Guide</a></li>
+                </ul>
+            </div>
+
+            <!-- For Employers -->
+            <div class="footer-col">
+                <h4>For Employers</h4>
+                <ul>
+                    <li><a href="#">Post a Job</a></li>
+                    <li><a href="#">Search Candidates</a></li>
+                    <li><a href="#">Recruitment Solutions</a></li>
+                    <li><a href="#">Pricing Plans</a></li>
+                    <li><a href="#">Enterprise Solutions</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Info -->
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-col">
+                <h4>Subscribe to Our Newsletter</h4>
+                <p>Get weekly updates on new job opportunities</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="copyright-bar">
+            <p>&copy; 2025 Chakri Job Portal. All rights reserved.</p>
+            <div class="language-selector">
+                <i class="ri-global-line"></i>
+                <select>
+                    <option>English</option>
+                    <option>Hindi</option>
+                    <option>Bengali</option>
+                    <option>Tamil</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/career-resources.js"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Job Seekers - Chakri Job Portal</title>
+    <link rel="stylesheet" href="CSS/job-seekers.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <div id="main">
+        <!-- Header Section with Redesigned Explore Dropdown -->
+        <div id="header">
+            <div id="logo">
+                <div id="favicon">
+                    <img src="Resourses/Chakri_Logo.png" alt="Chakri Logo">
+                </div>
+                <div id="name"><p>Chakri</p></div>
+            </div>
+            <div class="writing">
+                <div id="home">
+                    <a href="home.html"><p>Home</p></a>
+                </div>
+                <div id="jobboard">
+                    <a href="job-board.html"><p>Job Board</p></a>
+                </div>
+                <div id="categories">
+                    <a href="categories.html"><p>Categories</p></a>
+                </div>
+                <div id="aboutus">
+                    <a href="about-us.html"><p>About Us</p></a>
+                </div>
+                <!-- Redesigned Explore Dropdown -->
+                <div id="explore" class="selected">
+                    <a href="javascript:void(0);">
+                        <i class="ri-compass-3-line"></i>
+                        <p>Explore</p>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <div class="explore-dropdown">
+                        <a href="job-seekers.html" class="dropdown-item">
+                            <i class="ri-user-search-line"></i>
+                            <span>For Job Seekers</span>
+                        </a>
+                        <a href="for-employers.html" class="dropdown-item">
+                            <i class="ri-building-line"></i>
+                            <span>For Employers</span>
+                        </a>
+                        <a href="company.html" class="dropdown-item">
+                            <i class="ri-briefcase-line"></i>
+                            <span>Company</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="login">
+                    <a href="login.html">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="fakeheader"></div>
+
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-bg-animation"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Find Your Dream Job</h1>
+                    <p class="hero-subtitle">Explore thousands of opportunities tailored just for you</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15000">0</span>
+                            <span class="stat-label">Active Jobs</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="2500">0</span>
+                            <span class="stat-label">Companies</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="98">0</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <i class="ri-briefcase-line"></i>
+                        <span>Software Engineer</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="ri-palette-line"></i>
+                        <span>UI/UX Designer</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="ri-bar-chart-line"></i>
+                        <span>Data Analyst</span>
+                    </div>
+                    <div class="floating-card card-4">
+                        <i class="ri-customer-service-line"></i>
+                        <span>Marketing Manager</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Features Section -->
+        <section id="features">
+            <div class="section-header">
+                <h2 class="section-title">Your Journey Starts Here</h2>
+                <p class="section-subtitle">Choose your path to career success</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Browse Jobs Card -->
+                <div class="feature-card" data-feature="browse">
+                    <div class="card-icon">
+                        <i class="ri-search-line"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Browse Jobs</h3>
+                        <p>Discover thousands of job opportunities across various industries and experience levels.</p>
+                        <ul class="feature-list">
+                            <li><i class="ri-check-line"></i> Advanced search filters</li>
+                            <li><i class="ri-check-line"></i> Location-based results</li>
+                            <li><i class="ri-check-line"></i> Salary insights</li>
+                        </ul>
+                        <a href="browse-jobs.html" class="feature-btn">
+                            <span>Start Browsing</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                    <div class="card-overlay"></div>
+                </div>
+
+                <!-- Create Profile Card -->
+                <div class="feature-card" data-feature="profile">
+                    <div class="card-icon">
+                        <i class="ri-user-add-line"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Create Profile</h3>
+                        <p>Build a professional profile that showcases your skills and attracts top employers.</p>
+                        <ul class="feature-list">
+                            <li><i class="ri-check-line"></i> Professional templates</li>
+                            <li><i class="ri-check-line"></i> Skill assessments</li>
+                            <li><i class="ri-check-line"></i> Portfolio showcase</li>
+                        </ul>
+                        <a href="create-profile.html" class="feature-btn">
+                            <span>Build Profile</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                    <div class="card-overlay"></div>
+                </div>
+
+                <!-- Job Alerts Card -->
+                <div class="feature-card" data-feature="alerts">
+                    <div class="card-icon">
+                        <i class="ri-notification-3-line"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Job Alerts</h3>
+                        <p>Never miss an opportunity with personalized job alerts delivered to your inbox.</p>
+                        <ul class="feature-list">
+                            <li><i class="ri-check-line"></i> Custom notifications</li>
+                            <li><i class="ri-check-line"></i> Daily/weekly summaries</li>
+                            <li><i class="ri-check-line"></i> Priority matching</li>
+                        </ul>
+                        <a href="job-alerts.html" class="feature-btn">
+                            <span>Set Alerts</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                    <div class="card-overlay"></div>
+                </div>
+
+                <!-- Career Resources Card -->
+                <div class="feature-card" data-feature="resources">
+                    <div class="card-icon">
+                        <i class="ri-book-open-line"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Career Resources</h3>
+                        <p>Access expert advice, interview tips, and career development resources.</p>
+                        <ul class="feature-list">
+                            <li><i class="ri-check-line"></i> Resume templates</li>
+                            <li><i class="ri-check-line"></i> Interview preparation</li>
+                            <li><i class="ri-check-line"></i> Career guides</li>
+                        </ul>
+                        <a href="career-resources.html" class="feature-btn">
+                            <span>Explore Resources</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                    <div class="card-overlay"></div>
+                </div>
+
+                <!-- Salary Guide Card -->
+                <div class="feature-card" data-feature="salary">
+                    <div class="card-icon">
+                        <i class="ri-money-dollar-circle-line"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Salary Guide</h3>
+                        <p>Make informed decisions with comprehensive salary data and market insights.</p>
+                        <ul class="feature-list">
+                            <li><i class="ri-check-line"></i> Industry benchmarks</li>
+                            <li><i class="ri-check-line"></i> Experience-based data</li>
+                            <li><i class="ri-check-line"></i> Location comparisons</li>
+                        </ul>
+                        <a href="salary-guide.html" class="feature-btn">
+                            <span>View Salaries</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                    <div class="card-overlay"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section id="success-stories">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Real people, real career transformations</p>
+            </div>
+            
+            <div class="stories-slider">
+                <div class="story-card active">
+                    <div class="story-image">
+                        <img src="https://via.placeholder.com/80x80/512da8/ffffff?text=A" alt="Success Story">
+                    </div>
+                    <div class="story-content">
+                        <p class="story-text">"Chakri helped me transition from teaching to tech. I found my dream job as a UX designer within 3 months!"</p>
+                        <div class="story-author">
+                            <strong>Ananya Sharma</strong>
+                            <span>UX Designer at TechCorp</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="https://via.placeholder.com/80x80/512da8/ffffff?text=R" alt="Success Story">
+                    </div>
+                    <div class="story-content">
+                        <p class="story-text">"The career resources section was invaluable. Their interview tips helped me land a senior developer role!"</p>
+                        <div class="story-author">
+                            <strong>Rahul Kumar</strong>
+                            <span>Senior Developer at StartupInc</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="https://via.placeholder.com/80x80/512da8/ffffff?text=P" alt="Success Story">
+                    </div>
+                    <div class="story-content">
+                        <p class="story-text">"Job alerts kept me updated with opportunities that matched my skills perfectly. Got hired in 2 weeks!"</p>
+                        <div class="story-author">
+                            <strong>Priya Patel</strong>
+                            <span>Marketing Manager at GrowthCo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta">
+            <div class="cta-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Join thousands of job seekers who found their perfect match</p>
+                <div class="cta-buttons">
+                    <a href="create-profile.html" class="cta-btn primary">Create Your Profile</a>
+                    <a href="browse-jobs.html" class="cta-btn secondary">Browse Jobs Now</a>
+                </div>
+            </div>
+            <div class="cta-animation">
+                <div class="floating-elements">
+                    <div class="element element-1"></div>
+                    <div class="element element-2"></div>
+                    <div class="element element-3"></div>
+                    <div class="element element-4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (same as home page) -->
+        <div id="footer">
+            <div class="footer-container">
+                <!-- Footer Logo and About -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="Resourses/Chakri_Logo.png" alt="Chakri Logo">
+                        <h3>Chakri</h3>
+                    </div>
+                    <p class="footer-about">Connecting talented professionals <br> with their dream opportunities <br> since 2023.</p>
+                    <p class="footer-about">Find your perfect job match with Chakri.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-twitter-x-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-fill"></i></a>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+
+                <!-- For Job Seekers -->
+                <div class="footer-col">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="browse-jobs.html">Browse Jobs</a></li>
+                        <li><a href="create-profile.html">Create Profile</a></li>
+                        <li><a href="job-alerts.html">Job Alerts</a></li>
+                        <li><a href="career-resources.html">Career Resources</a></li>
+                        <li><a href="salary-guide.html">Salary Guide</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Employers -->
+                <div class="footer-col">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Search Candidates</a></li>
+                        <li><a href="#">Recruitment Solutions</a></li>
+                        <li><a href="#">Pricing Plans</a></li>
+                        <li><a href="#">Enterprise Solutions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Get weekly updates on new job opportunities</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="copyright-bar">
+                <p>&copy; 2025 Chakri Job Portal. All rights reserved.</p>
+                <div class="language-selector">
+                    <i class="ri-global-line"></i>
+                    <select>
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="bn">Bengali</option>
+                        <option value="ta">Tamil</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/job-seekers.js"></script>
+</body>
+</html>

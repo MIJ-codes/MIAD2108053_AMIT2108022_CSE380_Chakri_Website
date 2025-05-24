@@ -70,7 +70,7 @@ a {
 }
 
 /* ==========================================================================
-   HEADER STYLES
+   HEADER STYLES - FIXED
    ========================================================================== */
 #header {
     background-color: var(--primary);
@@ -93,14 +93,16 @@ a {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 #favicon {
     height: 60px;
-    width: auto;
+    width: 60px; /* Fixed width to prevent layout shift */
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 #favicon img {
@@ -114,9 +116,14 @@ a {
     font-weight: 500;
     letter-spacing: 0.5px;
     color: var(--white);
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* Navigation Menu */
+#name p {
+    margin: 0;
+}
+
+/* Navigation Menu - FIXED */
 .writing {
     height: 100%;
     display: flex;
@@ -124,14 +131,16 @@ a {
     justify-content: flex-end;
     align-items: center;
     gap: 30px;
+    flex-shrink: 0; /* Prevent navigation from shrinking */
 }
 
-.writing div {
+.writing > div {
     position: relative;
-    overflow: visible;
     height: 40px;
     display: flex;
     align-items: center;
+    flex-shrink: 0; /* Prevent individual nav items from shrinking */
+    overflow: visible;
 }
 
 .writing p {
@@ -144,6 +153,7 @@ a {
     z-index: 2;
     padding: 5px 8px;
     margin: 0;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .writing div a {
@@ -153,6 +163,12 @@ a {
 }
 
 /* Shooting star effect for menu items and animations */
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 @keyframes moveShootingStar {
     0% {
         top: 0;
@@ -211,21 +227,6 @@ a {
     }
 }
 
-/* Common shooting star pseudo-element */
-.shooting-star-effect {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--white), transparent);
-    opacity: 0;
-    z-index: 1;
-    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.8);
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    border-radius: var(--border-radius-sm);
-}
-
 /* Selected Menu Item Style */
 .writing div.selected p {
     font-weight: 600;
@@ -259,19 +260,144 @@ a {
     animation: moveShootingStar 2.5s linear infinite;
 }
 
-/* Globe/Language Selector */
-#globe {
+/* ==========================================================================
+   DROPDOWN STYLES - FIXED
+   ========================================================================== */
+.dropdown {
+    position: relative;
+    height: 40px;
+    overflow: visible; /* Ensure dropdown menu can extend beyond container */
+}
+
+.dropdown-trigger {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    padding: 5px 8px;
+    transition: var(--transition-fast);
+    position: relative;
+    z-index: 2;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-#globe i {
+.dropdown-trigger i {
     font-size: 18px;
     color: var(--white);
-    margin-right: 2px;
+}
+
+.dropdown-trigger p {
+    font-weight: 500;
+    font-size: var(--font-size-md);
+    color: var(--white);
+    margin: 0;
+}
+
+.dropdown-arrow {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    margin-left: 3px;
+}
+
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* FIXED DROPDOWN MENU */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 5px); /* Small gap between trigger and menu */
+    right: 0; /* Align to right edge to prevent overflow */
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    min-width: 200px;
+    max-width: 250px; /* Prevent menu from becoming too wide */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 2000; /* Higher z-index to ensure it appears above everything */
+    border: 1px solid rgba(81, 45, 168, 0.1);
+    /* Prevent the menu from affecting layout */
+    width: max-content;
+}
+
+.dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    position: relative;
+    font-size: 14px;
+    white-space: nowrap; /* Prevent text wrapping in dropdown items */
+}
+
+.dropdown-item:hover {
+    background-color: rgba(81, 45, 168, 0.05);
+    color: var(--primary);
+    padding-left: 25px;
+}
+
+.dropdown-item i {
+    font-size: 16px;
+    color: var(--primary);
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.dropdown-item span {
+    font-weight: 500;
+}
+
+/* Dropdown hover effects */
+.dropdown::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--white), transparent);
+    opacity: 0;
+    z-index: 1;
+    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.8);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: var(--border-radius-sm);
+}
+
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-sm);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.dropdown:hover::before {
+    opacity: 1;
+    animation: moveShootingStar 2.5s linear infinite;
+}
+
+.dropdown:hover::after {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Login Button */
@@ -291,6 +417,8 @@ a {
     text-decoration: none;
     height: auto;
     position: relative;
+    white-space: nowrap; /* Prevent text wrapping */
+    flex-shrink: 0; /* Prevent button from shrinking */
 }
 
 #login::before {
@@ -308,12 +436,12 @@ a {
 }
 
 /* Nav Hover Effects - Combined */
-.writing div:not(#login):hover::before, #login:hover::before {
+.writing div:not(#login):not(.dropdown):hover::before, #login:hover::before {
     opacity: 1;
     animation: moveShootingStar 2.5s linear infinite;
 }
 
-.writing div:not(#login)::before {
+.writing div:not(#login):not(.dropdown)::before {
     content: '';
     position: absolute;
     width: 15px;
@@ -327,7 +455,7 @@ a {
     border-radius: var(--border-radius-sm);
 }
 
-.writing div:not(#login)::after {
+.writing div:not(#login):not(.dropdown)::after {
     content: '';
     position: absolute;
     top: 0;
@@ -341,7 +469,7 @@ a {
     pointer-events: none;
 }
 
-.writing div:not(#login):hover::after {
+.writing div:not(#login):not(.dropdown):hover::after {
     opacity: 1;
     border-color: rgba(255, 255, 255, 0.3);
 }
@@ -361,32 +489,6 @@ a {
     height: 80px;
     width: 100%;
     background-color: var(--white);
-}
-
-/* Generic Content Section Styles */
-.content {
-    margin-top: 100px;
-    padding: 20px;
-    text-align: center;
-}
-
-.content h1 {
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-.instructions {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--white);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--box-shadow-sm);
-}
-
-.instructions p {
-    margin-bottom: 10px;
-    line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -513,6 +615,12 @@ a {
     z-index: 2;
 }
 
+#block2 img {
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
 /* ==========================================================================
    PAGE 2 STYLES
    ========================================================================== */
@@ -586,12 +694,6 @@ a {
 }
 
 /* Card Animation */
-@property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
 @keyframes spin {
     from { --angle: 0deg; }
     to { --angle: 360deg; }
@@ -614,6 +716,7 @@ a {
     padding: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
   
 /* Hide the gradient borders by default */
@@ -650,6 +753,13 @@ a {
     margin-top: 8px;
 }
 
+.card img {
+    max-width: 60px;
+    max-height: 60px;
+    object-fit: contain;
+    z-index: 2;
+}
+
 .card i {
     font-size: 2rem;
     color: var(--primary);
@@ -673,6 +783,7 @@ a {
     overflow: hidden;
     color: var(--primary);
     z-index: 2;
+    cursor: pointer;
 }
 
 .bigcard::before {
@@ -934,6 +1045,7 @@ a {
     /* Header Responsive Adjustments */
     #header {
         padding: 0 15px;
+        gap: 10px;
     }
     
     .writing {
@@ -941,7 +1053,7 @@ a {
     }
     
     #name {
-        font-size: 22px;
+        font-size: 20px;
     }
     
     .writing p {
@@ -951,6 +1063,11 @@ a {
     #login {
         padding: 6px 16px;
         font-size: 14px;
+    }
+
+    .dropdown-menu {
+        right: -10px; /* Adjust for mobile */
+        min-width: 180px;
     }
     
     /* Page 1 Responsive Adjustments */
@@ -1022,5 +1139,24 @@ a {
 
     .copyright-bar p, .language-selector {
         margin: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .writing {
+        gap: 8px;
+    }
+    
+    .writing p {
+        padding: 3px 6px;
+    }
+    
+    #login {
+        padding: 4px 12px;
+    }
+
+    .dropdown-menu {
+        right: -20px;
+        min-width: 160px;
     }
 }
